@@ -41,20 +41,6 @@ return [
                     ],
                 ],
             ],
-            'verifymobile' => [
-                'type' => Segment::class,
-                'options' => [
-                    'route'    => '/api/verifymobile[/:action]',
-                    'constraints' => [
-                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                    ],
-                    'defaults' => [
-                        'controller' => Controller\VerifymobileController::class,
-                        'action' => 'setotp',
-                        'isAuthorizationRequired' => true // set true if this api Required JWT Authorization.
-                    ],
-                ],
-            ],
         ],
     ],
     'controllers' => [
@@ -62,20 +48,9 @@ return [
             /*Controller\ApiClinicalnotesController::class => Controller\Factory\ApiClinicalnotesControllerFactory::class,*/
             Controller\ApiTokenController::class => Controller\Factory\ApiTokenControllerFactory::class,
             Controller\SsoController::class => Controller\Factory\SsoControllerFactory::class,
-            Controller\VerifymobileController::class => Controller\Factory\VerifymobileControllerFactory::class,
         ],
     ],
-    // We register module-provided controller plugins under this key.
-    'controller_plugins' => [
-        'factories' => [
-            Controller\Plugin\CurlPlugin::class => InvokableFactory::class,//Controller\Plugin\Factory\CurlPluginFactory::class,
-            Controller\Plugin\PasswordCheck::class => InvokableFactory::class,
-        ],
-        'aliases' => [
-            'curlapi' => Controller\Plugin\CurlPlugin::class,
-            'phpass' => Controller\Plugin\PasswordCheck::class,
-        ],
-    ],
+    
     // The 'access_filter' key is used by the User module to restrict or permit
     // access to certain controller actions for unauthorized visitors.
     //@ type of permissions will not work for api
@@ -100,9 +75,6 @@ return [
                 ['actions' => ['changepassword'], 'allow' => '+api.sso.changepassword' ],
 
             ],
-            Controller\VerifymobileController::class => [
-                ['actions' => ['setotp' , 'verifyotp','setotpresend'], 'allow' => '*' ],
-            ],
 
         ]
     ],
@@ -120,7 +92,6 @@ return [
             Service\ApiAuthManager::class => Service\Factory\ApiAuthManagerFactory::class,
             Service\RbacAssertionManager::class => Service\Factory\RbacAssertionManagerFactory::class,
             Service\RbacManager::class => Service\Factory\RbacManagerFactory::class,
-            Service\OtpsManager::class => Service\Factory\OtpsManagerFactory::class,
             Service\ApiRoleManager::class => Service\Factory\ApiRoleManagerFactory::class
 
         ],
