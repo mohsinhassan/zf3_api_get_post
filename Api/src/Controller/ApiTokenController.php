@@ -13,7 +13,6 @@ use RestApi\Controller\ApiController;
 use Common\Entity\User;
 use Common\Entity\Usersso;
 use Zend\Http\PhpEnvironment\RemoteAddress;
-use Admin\Service\UserSsoManager;
 use Zend\Crypt\Password\Bcrypt;
 use Zend\View\Model\JsonModel;
 
@@ -497,14 +496,5 @@ class ApiTokenController extends ApiController
             }
         }
         return $ssoData['sso_id'];
-    }
-
-    public function testAction()
-    {
-        echo $email = $this->params()->fromQuery('email','');
-        echo $featureName = $this->params()->fromQuery('featureName=','');
-        //isValid = $checkSsoId = $this->entityManager->getRepository(Usersso::class)->findOneBySsoId($ssoData['sso_id']);
-        echo "i m here23"; exit;
-
     }
 }

@@ -3,7 +3,6 @@ namespace Api\Controller\Factory;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
-//use Admin\Service\AuthManager;
 use Api\Controller\ApiTokenController;
 use Api\Service\ApiTokenManager;
 use Api\Service\ApiSsoUserManager;

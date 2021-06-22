@@ -2,10 +2,7 @@
 namespace Api\Service\Factory;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
-//use Zend\Authentication\AuthenticationService;
-//use Zend\Session\SessionManager;
 use Api\Service\ApiAuthManager;
-//use Admin\Service\UserManager;
 use Api\Service\RbacManager;
 /**
  * This is the factory class for ApiAuthManager service. The purpose of the factory

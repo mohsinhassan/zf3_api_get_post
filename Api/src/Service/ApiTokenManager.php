@@ -1,7 +1,6 @@
 <?php
 namespace Api\Service;
 use Common\Entity\ApiAccessToken;
-#use Admin\Service\ActivitylogManager;
 /**
  * This service is responsible for adding/editing users
  * and changing user password.

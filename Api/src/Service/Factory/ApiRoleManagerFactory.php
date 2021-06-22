@@ -2,7 +2,7 @@
 namespace Api\Service\Factory;
 use Interop\Container\ContainerInterface;
 use Api\Service\ApiRoleManager;
-use Admin\Service\RbacManager;
+use Api\Service\RbacManager;
 
 /**
  * This is the factory class for ApiRoleManager service. The purpose of the factory

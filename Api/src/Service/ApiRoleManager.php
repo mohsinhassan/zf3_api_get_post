@@ -22,7 +22,7 @@ class ApiRoleManager
     
     /**
      * RBAC manager.
-     * @var Admin\Service\RbacManager
+     * @var Api\Service\RbacManager
      */
     private $rbacManager;
     
@@ -245,7 +245,7 @@ class ApiRoleManager
                 ->findOneByName($p);
             
             if ($permission == null) {
-                throw new \Exception('Permission with such name doesn\'t exist');
+                return false;
             }
             $role->getPermissions()->add($permission);
         }
